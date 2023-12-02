@@ -145,3 +145,83 @@ nums.reverse()
 # Allows to sort a list in the reverse order starting with the last first etc.
 print(nums)
 # Prints the nums list to confirm changes
+
+# nums.sort(reverse=True)
+# This will sort the list in decending order starting with the larges number
+# print(nums)
+# Prints the nums list to confirm changes
+
+# Global sort function to print out sort changes without changing the list
+print(sorted(nums, reverse=True))
+# Here we print using the sorted function to sort the nums list using the 'revers=True' function.
+# This is to again sort the list without changing the original list.
+print(nums)
+# Prints the nums list to confirm changes
+
+# Make copy & sort
+
+# The three methods below can be used to make a copy of a list.
+numscopy = nums.copy()
+# Method 1
+mynums = list(nums)
+# Method 2
+mycopy = nums[:]
+# Method 3
+
+print(numscopy)
+# Prints the numscopy list to confirm changes
+print(mynums)
+# Prints the mynums list to confirm changes
+print(mycopy)
+# Prints the mycopy list to confirm changes
+
+mycopy.sort()
+# Sorts the mycopy list in ascending order.
+print(mycopy)
+# Prints the mycopy list to confirm changes
+
+# Check the type of list to det the data class
+print(type(nums))
+
+mylist = list([1, "Neil", True])
+# A method to create a list using the list constructor
+print(mylist)
+# Prints the mylist to confirm chages
+
+# TUPELS
+
+# Tupels are like lists except that they can not be changes and neithier can the order be changed.
+
+mytuple = tuple(('Dave', 42, True))
+# Creates a tuple using the tuple constructor
+anothertuple = (1, 2, 3, 9, 2, 2, 5, 1)
+# Creates a tuple without a constructor.
+
+print(mytuple)
+print(type(mytuple))
+print(type(anothertuple))
+
+# How to copy a tuple
+
+newlist = list(mytuple)
+# Creates a new list using the list constructor for the variables in mytuple.
+
+newlist.append('Neil')
+# Here we can append the variable 'Neil' to the newlist
+
+newtuple = tuple(newlist)
+# We can then make the newlist into a tuple
+print(newtuple)
+# print the newtuple to to confirm the changes
+
+# Unpacking a tuple
+
+(*one, two, hey) = anothertuple
+# Assigns the variables in the anothertuple to the one, two, hey variables.
+# Note that assigning the * puts all inbetween variables to that set.
+print(one)
+print(two)
+print(hey)
+
+print(anothertuple.count(2))
+# Allows the methos of counting how many '2' there are inside the anothertuple.
