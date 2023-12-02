@@ -52,3 +52,18 @@ print("guitar" in band)
 # This will check if the key "guitar" in dictionary band exists and return a boolean True or False
 print("triangle" in band)
 # This will check if the key "triangle" in dictionary band exists and return a boolean True or False
+
+# CHANGE VALUES
+
+band["vocals"] = "coverdale"
+# Updates the value in vocals from plant to coverdale
+band.update({"bass": "JPJ"})
+# Adds a new key/value pair to the dictionary
+print(band)
+# print the dictionary band to confirm changes
+
+# REMOVE ITEMS
+print(band.pop("bass"))
+# Using the pop method this will remove the key/value pair "bass" and will only return the value "JPJ"
+print(band)
+# print the dictionary band to confirm changes
