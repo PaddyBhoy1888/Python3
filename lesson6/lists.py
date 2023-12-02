@@ -72,3 +72,76 @@ users.extend(['Robert', 'Jimmy'])
 # Using the '.extend' function we can extend an existing list with a new list.
 print(users)
 # prints the list to confirm lists have been added together into one list and contains all users.
+
+users.insert(0, 'Bob')
+# Inster the variable 'Bob' into the users list at the 0 position i.e. first
+print(users)
+# Prints the list users to confirm changes
+
+users[2:2] = ['Eddie', 'Alex']
+# Another method to insert names with brackets to insert two variable in the second position and stop at second.
+print(users)
+# Prints the list users to confirm changes
+
+users[1:3] = ['Robert', 'JPJ']
+# The range specified determines if a variable is replaced.
+# using 1:3 we replace the position 1 & 2 but stop at position 3.
+print(users)
+# Prints the list users to confirm changes
+
+# Remove a user
+
+users.remove('Bob')
+# Remove the variable 'Bob' from the users list
+print(users)
+# Prints the list users to confirm changes
+
+print(users.pop())
+# This is the 'pop' method that returns the last variable in the list then removes it from the list.
+print(users)
+# Prints the list users to confirm changes
+
+# Delete a user or item
+
+del users[0]
+# This is the delete function that allows deleting from a list. Here we delete the list variable at 0 position.
+print(users)
+# Prints the list users to confirm changes
+
+# del data
+# This deletes the whole list and when printed then python will not find it.
+print(data)
+# Prints the list data to confirm changes
+
+# Instead of deleting the full list we can use the clear method
+data.clear()
+# This will clear all the variables in the list. but list will still exist
+print(data)
+# Prints the list data to confirm changes
+
+# Sort lists
+
+users[1:2] = ['dave']
+# Replacing the position 1 with the variable name 'dave' as lower case to see how this impacts the sort method.
+users.sort()
+# This will sort the variables in the users list by alphabetical order.
+# If the variable starts with a lower case it will auto go to the end.
+print(users)
+# Prints the list users to confirm changes
+
+users.sort(key=str.lower)
+# This will allow us to sort the names including lower case. As all the name variables are string the key=str
+# allows the strings to be all considered as lower case and then sorted in order.
+print(users)
+
+# Numbers
+
+nums = [4, 42, 78, 1, 5]
+# Creates a list of numbers
+print(nums)
+# Prints the nums list to confirm changes
+
+nums.reverse()
+# Allows to sort a list in the reverse order starting with the last first etc.
+print(nums)
+# Prints the nums list to confirm changes
