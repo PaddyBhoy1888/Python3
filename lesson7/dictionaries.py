@@ -67,3 +67,58 @@ print(band.pop("bass"))
 # Using the pop method this will remove the key/value pair "bass" and will only return the value "JPJ"
 print(band)
 # print the dictionary band to confirm changes
+
+band["drums"] = "Bonham"
+# Creates a new key/value pair dictionary
+print(band)
+# print the dictionary band to confirm changes
+
+print(band.popitem())
+# Removes the last key/value pair but returns a Tuple that has been removed.
+print(band)
+# print the dictionary band to confirm changes
+
+# DELETE & CLEAR
+
+band["drums"] = "bonham"
+# Adds the key/value pair into the band dictionary
+print(band)
+# print the dictionary band to confirm changes
+del band["drums"]
+# Using the 'del' or delete function we can remove the key "drums" from the band dictionary
+# This will also remove the value associsiated with the key.
+# To delete the value we must specify the key as specifying the values returns a error
+print(band)
+# print the dictionary band to confirm changes
+
+print(band2)
+# print band2 so we can see what is in the dictionary before attempting to change
+band2.clear()
+# Clears all the key/value pairs from the dictionary
+print(band2)
+# print the dictionary band2 to confirm changes
+
+del band2
+# Using the 'del' function we can completely delete the dictionary band2.
+# print(band2)
+# Trying to print this dictionary after being deleted will return a 'not identified' error.
+
+
+# COPY DICTIONARIES
+
+# The first method below is not prefered as it is a refernce copy method and add/remove from one effects the other.
+# band2 = band
+# This method creates a refernce to band not a copy
+# print("Bad copy!")
+# This is a bad copy as if we add or remove from band2 it will also add and remove from band
+# print(band2)
+# print band2 to confirm changes
+# print(band)
+# print band to confirm changes
+
+# band2["drums"] = "Dave"
+# Adds a key/value pair to band2
+# print(band2)
+# print band2 to confirm changes
+# print(band)
+# print band to confirm changes
