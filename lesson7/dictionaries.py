@@ -122,3 +122,104 @@ del band2
 # print band2 to confirm changes
 # print(band)
 # print band to confirm changes
+
+# Correct way to make a copy
+
+band2 = band.copy()  # This should be the prefered method to copy a dictionarie
+band2["drums"] = "Dave"
+print("Good Copy!")
+print(band)
+print(band2)
+
+# There is another way to make a copy using the constructor function
+
+band3 = dict(band)
+print("Good Copy!")
+print(band3)
+
+# NESTED DICTIONARIES
+
+member1 = {             # This is a dictionary with keys & values inside
+    "name": "Plant",
+    "instrument": "vocals"
+}
+member2 = {
+    "name": "Page",
+    "instrument": "guitar"
+}
+band = {
+    "member1": member1,
+    "member2": member2
+}
+
+print(band)
+# This method to get info inside dictionary, band dictionary, member1, name
+print(band["member1"]["name"])
+
+# SETS
+
+nums = {1, 2, 3, 4}  # Creates a Set of numbers
+
+# Creates a set of numbers using the constructor funcion
+nums2 = set((1, 2, 3, 4))
+
+print(nums)  # Print nums
+print(nums2)
+print(type(nums))  # Check the type of nums
+print(len(nums))  # Check the length of nums
+
+# Advantages of sets are there are no duplicates allowed
+
+# Creates the set of numbers, duplicate 2. Note won't register when printed
+nums = {1, 2, 2, 3}
+print(nums)  # print nums
+
+# True is a dupe of 1, False is a dupe of zero.
+
+# The print out will ignore the duplicates and arrange in the correct.
+nums = {1, True, 2, False, 3, 4, 0}
+print(nums)
+
+# Check if a value is in a set
+print(2 in nums)  # Checks to see if the value 2 is in the set nums
+
+# But you cannot refer to an element in the set with an index position or key
+
+# Add a new element to a set
+nums.add(8)  # Using the .add we can add a number to the set
+print(nums)
+
+# Add elements from on set to another
+morenums = {5, 6, 7}  # Create a new set
+print(morenums)
+# Using the .update method we can pass in the new set 'morenums' into 'nums'
+nums.update(morenums)
+print(nums)
+
+# You can use the .update with lists, tuples and dictionaries, to
+
+# Merger two sets to create a new set
+one = {1, 2, 3}  # Create a set called one
+two = {5, 6, 7}  # Create a set called two
+print(one)  # Print one
+print(two)  # Print two
+
+# Creates a new set by merging one & two using .union method
+mynewset = one.union(two)
+print(mynewset)  # Print
+
+# Keep only the duplicates
+one = {1, 2, 3}  # Create a set called one
+two = {2, 3, 4}  # Create a set called two
+
+# Changes the set one to only include the duplicated values
+one.intersection_update(two)
+print(one)
+
+# Keep everything except the duplicates
+one = {1, 2, 3}  # Create a set called one
+two = {2, 3, 4}  # Create a set called two
+
+# Changes the set one to keep everything except for duplicates.
+one.symmetric_difference_update(two)
+print(one)
