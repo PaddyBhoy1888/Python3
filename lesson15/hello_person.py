@@ -1,4 +1,4 @@
-# Using modules and arguments
+# Using modules and command line arguments
 
 
 def hello(name, lang):  # Derfin function 'hello' with two arguments to be passed
