@@ -117,8 +117,13 @@ def gn(name='playerOne'):
         else:  # else statement to begin the stop process
             print("\n🥳🎉\n")
             print("Thank you for playing!\n")
-            # This will exit the game and return to the terminal config
-            sys.exit(f"Bye {name}! 👋")
+            # This will exit the game and return to the terminal config.
+            # Note the if, else statement built in that if the game is called from the terminal
+            # it will return to the terminal, if called from elsewhere it will return to there.
+            if __name__ == "__main__":
+                sys.exit(f"Bye {name}! 👋")
+            else:
+                return
 
     # This is added to return the function
     return play_gn
