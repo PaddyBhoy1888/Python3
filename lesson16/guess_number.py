@@ -10,7 +10,8 @@
 # The player will only be able to input the three choices ONLY, error return if not chosen.
 
 # The output should show results of both computer & player choices, who wins, count the games played, winning percentage, play again Y or Q, thanks for playing,  game should be personalised.
-#
+# To play type the following into the terminal: -
+# py guess_number.py -n [INSERT NAME] *Make sure in the corect directory
 
 
 import random
