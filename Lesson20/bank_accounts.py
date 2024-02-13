@@ -51,3 +51,47 @@ class BankAccount:  # Creates a class called @BankAccount'
         # Catch any errors and return the statement print and the error that has been detected.
         except BalanceException as error:
             print(f"\nWithdraw Interupted: {error}")
+
+    # define transfer function with 'Self, amount & account' are inputs
+    def transfer(self, amount, account):
+        try:  # Try method to check the variables below
+            # Short print statement to show the transfer has started
+            print('\n******\n\n\Begining transfer..🚀')
+            # Checks the amount stored against the amount input to make sure transfer can be made.
+            self.viable_transfer(amount)
+            self.withdraw(amount)  # Will run the withdraw function.
+            # Will check the account specified and run the deposit function on that account
+            account.deposit(amount)
+            print('\nTransfer Complete! \n\n******')
+        except BalanceException as error:
+            print(f'\nTransfer Interupted. {error}')
+
+
+# Creates a new class which inherites the parent class 'BankAccount'
+class InterestRewardsAcct(BankAccount):
+
+    def deposit(self, amount):  # Defines deposit function
+        # Checks the self balance + the amount * 5%
+        self.balance = self.balance + (amount * 1.05)
+        print("\nDeposit complete.")  # Print statement
+        self.get_balance()  # Check the balance of the account
+
+
+# Creates a new class which inherites the parent class 'InterstRewardsAcct'
+class SavingsAcct(InterestRewardsAcct):
+
+    def __init__(self, initial_Amount, acct_Name):  # Defines function using the init function
+        super().__init__(initial_Amount, acct_Name)
+        self.fee = 5  # This adds a fee for anywithdraw
+
+    def withdraw(self, amount):  # defines a new withdraw function inside tis class
+        try:
+            # Checks the amount + the fee set to see if enough funds in account
+            self.viable_transfer(amount + self.fee)
+            # Balance will be original ballance - (amount + Fee)
+            self.balance = self.balance - (amount + self.fee)
+            print("\nWithdraw Complete.")
+            self.get_balance()  # Calls the new balance
+
+        except BalanceException as error:  # If an error accours return the error
+            print(f"\nWithdraw Interupted: {error}")
