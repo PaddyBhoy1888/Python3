@@ -26,11 +26,22 @@
 #
 
 
+from pprint import pprint
 import requests
-from dotenv import load_dotenv  # Helps get enviroment value not global
-import os  # Built into python
+# Helps get enviroment value not global
 
-load_dotenv()  # calls 'load_dotenv' to load in the enviroment variables so we can retrieve them.(i.e. API_KEY)
+import os
+from dotenv import load_dotenv
+# print(dotenv)
+load_dotenv()
+
+# from dotenv import load_dotenv
+# from dotenv import load_dotenv
+
+# import os  # Built into python
+
+# calls 'load_dotenv' to load in the enviroment variables so we can retrieve them.(i.e. API_KEY)
+# load_dotenv()
 
 # Create a function that will call the weather conditions
 
@@ -47,11 +58,20 @@ def get_current_weather():
     # Note the url has been modified to get the API_KEY and query the city along with the units of measure.
 
     # Just as a check to make sure what is included as expected.
-    print(request_url)
+    # print(request_url)
 
     # Creates a variable that
-    # weather_data = requests.get(request_url).json()
+    weather_data = requests.get(request_url).json()
 
+    # pprint(weather_data)
+
+    print(f'\nCurrent weather for {weather_data["name"]}:')
+    print(f'\nThe temp is {weather_data["main"]["temp"]}')
+    print(
+        f'\n{weather_data["weather"][0]["descriptrion"].capitalize()} and feel like {weather_data["main"]["feels_like"]}\n')
+
+
+if __name__ == "__main__":
     get_current_weather()  # Call the function.
 
 # Create the variable to request the url.
