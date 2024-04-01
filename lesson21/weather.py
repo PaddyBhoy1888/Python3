@@ -68,7 +68,7 @@ def get_current_weather():
     print(f'\nCurrent weather for {weather_data["name"]}:')
     print(f'\nThe temp is {weather_data["main"]["temp"]}')
     print(
-        f'\n{weather_data["weather"][0]["descriptrion"].capitalize()} and feel like {weather_data["main"]["feels_like"]}\n')
+        f'\n{weather_data["weather"][0]["descriptrion"].capitalize()} and feel like {weather_data["main"]["feels_like"]:.1f}\n')
 
 
 if __name__ == "__main__":
